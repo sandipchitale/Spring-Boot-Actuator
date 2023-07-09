@@ -1,0 +1,26 @@
+<div class="wrapper">
+  <p-toolbar>
+    <div class="p-toolbar-group-left" style="flex: 1 1 auto">
+      <button pButton icon="pi pi-bars" class="p-button-primary"></button>
+      <input type="text" class="ml-2 flex-grow-1" pInputText [(ngModel)]="springbootAppUrl" />
+    </div>
+    <div class="p-toolbar-group-right" style="flex: 0 0 auto">
+      <p-toggleButton
+        [(ngModel)]="lightTheme"
+        [onIcon]="'pi pi-sun'"
+        [offIcon]="'pi pi-moon'"
+        class="ml-auto"
+        (onChange)="adjustTheme($event)"></p-toggleButton>
+    </div>
+  </p-toolbar>
+  <main>
+    <p-tabView>
+      <p-tabPanel header="Beans">
+        <h1>Beans</h1>
+      </p-tabPanel>
+      <p-tabPanel header="Mappings">
+        <h1>Mappings</h1>
+      </p-tabPanel>
+  </p-tabView>
+  </main>
+</div>

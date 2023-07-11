@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "gradle-ng-build": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build spring-boot-actuator-viewer --output-path=../main/resources/app"
+    "gradle-ng-build": "node --max_old_space_size=8192 ./node_modules/@angular/cli/bin/ng build spring-boot-actuator-viewer --output-path=../../build/generated/app"
   },
   "private": true,
   "dependencies": {

@@ -46,7 +46,7 @@ var ngbuild = tasks.register<NpmTask>("ngbuild") {
     workingDir.set(file("${project.projectDir}/src/frontend"))
 
     inputs.dir(file("src/frontend/"))
-    outputs.dir(file("${project.projectDir}/src/main/resources/app"))
+    outputs.dir(file("${buildDir}/generated/app/"))
 }
 
 tasks {
@@ -59,12 +59,9 @@ tasks {
         kotlinOptions.jvmTarget = "17"
     }
 
-    processResources {
-        dependsOn("ngbuild")
-    }
-
     prepareSandbox {
-        from("${projectDir}/src/main/resources/app/") {
+        dependsOn("ngbuild")
+        from("${buildDir}/generated/app/") {
             into("${intellij.pluginName.get()}/app")
         }
     }
